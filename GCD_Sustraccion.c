@@ -34,10 +34,8 @@ int main(int argc, char* argv[]){
     clock_t begin = clock(); // Records the start time of the program   
     f = gcd(a, b);
     clock_t end = clock();  // Records the stop time of the program
-
     float time = ( double )( end - begin ) / CLOCKS_PER_SEC;  // Calculates the elapsed time in seconds
-
+    
     printf("%i  %f\n", f, time) ;// Prints out the two numbers separated by a space and followed by a newline
-
     return 0;
 }

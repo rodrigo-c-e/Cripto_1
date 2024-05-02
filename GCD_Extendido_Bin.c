@@ -81,7 +81,7 @@ int main(int argc, char *argv[]){
     D = 1;
 
     clock_t begin = clock(); // Records the start time of the program 
-    gcd1(x,y, u, v, A, B, C, D, PivoteX, PivoteY, g);
+    gcd1(x, y, u, v, A, B, C, D, PivoteX, PivoteY, g);
     clock_t end = clock();  // Records the stop time of the program
     float time = ( double )( end - begin ) / CLOCKS_PER_SEC;  // Calculates the elapsed time in seconds
 

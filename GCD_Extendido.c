@@ -44,7 +44,7 @@ int main(int argc, char* argv[]){
     long long int a, b;
 
     a = strtoll(argv[1], &err, 10);
-    b = strtoll(argv[2], &err,10); 
+    b = strtoll(argv[2], &err, 10); 
 
     if(b > a){
         long long int temp = a;
