@@ -47,7 +47,7 @@ void gcd1(long long int x,long long int y, long long int u, long long int v, lon
         printf("%ld * %ld + %ld * %ld = %ld\n", a,PivoteX,b, Pivotey,g);
     }
     else{
-        gcd1(x, y, u, v, A, B, C, D, PivoteX, Pivotey, v);
+        gcd1(x, y, u, v, A, B, C, D, PivoteX, Pivotey, g);
     }
 
 }
