@@ -41,17 +41,23 @@ void gcd(long long int a, long long int b){
 
 int main(int argc, char* argv[]){
     char *err;
-    long long int a, b, f;
+    long long int a, b;
 
     a = strtoll(argv[1], &err, 10);
     b = strtoll(argv[2], &err,10); 
+
+    if(b > a){
+        long long int temp = a;
+        a = b;
+        b = temp;
+    }
 
     clock_t begin = clock(); // Records the start time of the program   
     gcd(a, b);
     clock_t end = clock();  // Records the stop time of the program
     float time = ( double )( end - begin ) / CLOCKS_PER_SEC;  // Calculates the elapsed time in seconds
 
-    printf("%f\n", f, time) ;// Prints out the two numbers separated by a space and followed by a newline
+    printf("%f\n", time) ;// Prints out the two numbers separated by a space and followed by a newline
 
     return 0;
 }

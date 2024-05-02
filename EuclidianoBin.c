@@ -36,6 +36,12 @@ int main(int argc, char *argv[]){
     a = strtoll(argv[1], &err, 10);
     b = strtoll(argv[2], &err, 10); 
 
+    if(b > a){
+        long long int temp = a;
+        a = b;
+        b = temp;
+    }
+
     clock_t begin = clock(); // Records the start time of the program   
     f = gcd(a, b);
     clock_t end = clock();  // Records the stop time of the program
