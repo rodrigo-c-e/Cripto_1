@@ -4,6 +4,7 @@
 #include <math.h>
 
 void gcd(long long int a, long long int b);
+unsigned int countBits(unsigned int n);
 
 void gcd(long long int a, long long int b){
     long long int d, x, y;
@@ -39,9 +40,21 @@ void gcd(long long int a, long long int b){
     }
 }
 
+unsigned int countBits(unsigned int n) 
+{ 
+   unsigned int count = 0; 
+   while (n) 
+   { 
+        count++; 
+        n >>= 1; 
+    } 
+    return count; 
+} 
+
 int main(int argc, char* argv[]){
     char *err;
     long long int a, b;
+    int bits;
 
     a = strtoll(argv[1], &err, 10);
     b = strtoll(argv[2], &err, 10); 
@@ -52,12 +65,14 @@ int main(int argc, char* argv[]){
         b = temp;
     }
 
+    bits = countBits(a) + countBits(b);
+
     clock_t begin = clock(); // Records the start time of the program   
     gcd(a, b);
     clock_t end = clock();  // Records the stop time of the program
     float time = ( double )( end - begin ) / CLOCKS_PER_SEC;  // Calculates the elapsed time in seconds
 
+    printf("%i\t", bits);
     printf("%f\n", time) ;// Prints out the two numbers separated by a space and followed by a newline
-
     return 0;
 }

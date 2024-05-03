@@ -3,6 +3,7 @@
 #include <time.h>
 
 void gcd1(long long int  x, long long int y, long long int u, long long int v, long long int A, long long int B, long long int C, long long int D, long long int PivoteX, long long int Pivotey, long long int g);
+unsigned int countBits(unsigned int n) ;
 
 void gcd1(long long int x,long long int y, long long int u, long long int v, long long int A, long long int B, long long int C, long long int D, long long int PivoteX, long long int  Pivotey, long long int g){
     long long int a, b;
@@ -52,18 +53,33 @@ void gcd1(long long int x,long long int y, long long int u, long long int v, lon
 
 }
 
+unsigned int countBits(unsigned int n) 
+{ 
+   unsigned int count = 0; 
+   while (n) 
+   { 
+        count++; 
+        n >>= 1; 
+    } 
+    return count; 
+} 
+
 int main(int argc, char *argv[]){
+    char *err;
     long long int x, y, g, u, v, A, B, C, D, PivoteX, PivoteY;
-    
+    int bits;
+
     g = 1;
-    x = atol(argv[1]);
-    y = atol(argv[2]);
+    x = strtoll(argv[1], &err, 10);
+    y = strtoll(argv[2], &err, 10);
 
     if( y > x ){
         long long int temp = x;
         x = y;
         y = temp;
     }
+
+    bits = countBits(x) + countBits(y);
 
     PivoteX = x;
     PivoteY = y;
@@ -85,8 +101,7 @@ int main(int argc, char *argv[]){
     clock_t end = clock();  // Records the stop time of the program
     float time = ( double )( end - begin ) / CLOCKS_PER_SEC;  // Calculates the elapsed time in seconds
 
+    printf("%i\t", bits);
     printf("%f\n", time) ;// Prints out the two numbers separated by a space and followed by a newline
-
     return 0;
-    
 }

@@ -3,6 +3,7 @@
 #include <time.h>
 
 int gcd(int a, int b);
+unsigned int countBits(unsigned int n);
 
 int gcd(int a, int b) {
     int r;
@@ -18,9 +19,21 @@ int gcd(int a, int b) {
     return a;          //* Returns the GCD which is stored in variable 'a'
 }
 
+unsigned int countBits(unsigned int n) 
+{ 
+   unsigned int count = 0; 
+   while (n) 
+   { 
+        count++; 
+        n >>= 1; 
+    } 
+    return count; 
+} 
+
 int main(int argc, char* argv[]){
     char *err;
     long long int a, b, f;
+    int bits;
 
     a = strtoll(argv[1], &err, 10);
     b = strtoll(argv[2], &err, 10); 
@@ -31,11 +44,14 @@ int main(int argc, char* argv[]){
         b = temp;
     }
 
+    bits = countBits(a) + countBits(b);
+
     clock_t begin = clock(); // Records the start time of the program   
     f = gcd(a, b);
     clock_t end = clock();  // Records the stop time of the program
     float time = ( double )( end - begin ) / CLOCKS_PER_SEC;  // Calculates the elapsed time in seconds
     
+    printf("%i\t", bits);
     printf("%lli    %f\n", f, time) ;// Prints out the two numbers separated by a space and followed by a newline
     return 0;
 }
