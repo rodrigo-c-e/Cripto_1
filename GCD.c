@@ -48,6 +48,7 @@ int main(int argc, char *argv[]){
     float time = ( double )( end - begin ) / CLOCKS_PER_SEC;  // Calculates the elapsed time in seconds
     
     printf("%i\t", bits);
-    printf("%lli    %f\n", f, time) ;// Prints out the two numbers separated by a space and followed by a newline
+    //printf("%lli\t", f);
+    printf("%f\n", time);
     return 0;
 }

@@ -36,7 +36,7 @@ void gcd(long long int a, long long int b){
         d = a;
         x = x2;
         y = y2;
-        printf("%lli    %lli    %lli    ", d, x, y);
+        //printf("%lli    %lli    %lli    ", d, x, y);
     }
 }
 

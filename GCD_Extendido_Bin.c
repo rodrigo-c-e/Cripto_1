@@ -45,7 +45,7 @@ void gcd1(long long int x,long long int y, long long int u, long long int v, lon
         a = C;
         b = D;
         g = g * v;
-        printf("%lld    %lld    %lld    ", g, a, b);
+        //printf("%lld    %lld    %lld    ", g, a, b);
     }
     else{
         gcd1(x, y, u, v, A, B, C, D, PivoteX, Pivotey, g);
