@@ -29,7 +29,7 @@ unsigned int countBits(unsigned int n)
 int main(int argc, char *argv[]){
     char *err;
     long long int a, b, f;
-    long long int bits;
+    int bits;
 
     a = strtoll(argv[1], &err, 10);
     b = strtoll(argv[2], &err, 10); 
@@ -40,14 +40,14 @@ int main(int argc, char *argv[]){
         b = temp;
     }
 
-    bits = countBits(a) + countBits(b);
+    bits = countBits(a) - countBits(b);
 
     clock_t begin = clock(); // Records the start time of the program   
     f = gcd(a, b);
     clock_t end = clock();  // Records the stop time of the program
     float time = ( double )( end - begin ) / CLOCKS_PER_SEC;  // Calculates the elapsed time in seconds
     
-    printf("%lli\t", bits);
+    printf("%i\t", bits);
     //printf("%lli\t", f);
     printf("%f\n", time);
     return 0;

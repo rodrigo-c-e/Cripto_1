@@ -67,7 +67,7 @@ unsigned int countBits(unsigned int n)
 int main(int argc, char *argv[]){
     char *err;
     long long int x, y, g, u, v, A, B, C, D, PivoteX, PivoteY;
-    long long int bits;
+    int bits;
 
     g = 1;
     x = strtoll(argv[1], &err, 10);
@@ -79,7 +79,7 @@ int main(int argc, char *argv[]){
         y = temp;
     }
 
-    bits = countBits(x) + countBits(y);
+    bits = countBits(x) - countBits(y);
 
     PivoteX = x;
     PivoteY = y;
@@ -101,7 +101,7 @@ int main(int argc, char *argv[]){
     clock_t end = clock();  // Records the stop time of the program
     float time = ( double )( end - begin ) / CLOCKS_PER_SEC;  // Calculates the elapsed time in seconds
 
-    printf("%lli\t", bits);
+    printf("%i\t", bits);
     printf("%f\n", time) ;// Prints out the two numbers separated by a space and followed by a newline
     return 0;
 }
