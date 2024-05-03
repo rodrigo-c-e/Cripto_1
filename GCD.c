@@ -31,6 +31,6 @@ int main(int argc, char *argv[]){
     clock_t end = clock();  // Records the stop time of the program
     float time = ( double )( end - begin ) / CLOCKS_PER_SEC;  // Calculates the elapsed time in seconds
 
-    printf("%lli  %f\n", f, time) ;// Prints out the two numbers separated by a space and followed by a newline
+    printf("%lli    %f\n", f, time) ;// Prints out the two numbers separated by a space and followed by a newline
     return 0;
 }
